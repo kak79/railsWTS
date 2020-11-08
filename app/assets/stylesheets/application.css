@@ -14,9 +14,7 @@
  *= require_self
  */
 
-:required {
-  https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css
-}
+
 
 body {
   font-family: 'Montez', cursive;
@@ -83,26 +81,30 @@ body {
 
 .footer {
   text-align: center;
+  
 }
 .footer-menu {
   padding-left: 20px;
   text-align: center;
   font-size: larger;
+  
 }
 .footer-menu ul {
   margin: 90px auto;
   float: center;
+  
 }
 .footer-menu ul li{
   display: inline;
-
+  
 }
 .footer-menu ul li a:hover{
   color: darkcyan;
-
+  
 }
 .each-footer-menu-item {
   padding: 20px;
+  
 }
 
 /* This is where the footer is styled */
