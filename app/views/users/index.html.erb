@@ -1,5 +1,5 @@
 <% @user.each do |user| %>
-<%= link_to user.name, users_path(user) %>&nbsp &nbsp &nbsp &nbsp &nbsp
+<%= link_to user.name,  user_path(user) %>&nbsp &nbsp &nbsp &nbsp &nbsp
 <% end %>
 <br><br>
 <%= link_to "Add User", new_user_path %>
