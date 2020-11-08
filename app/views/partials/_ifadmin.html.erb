@@ -1,0 +1,5 @@
+<% if @user.permissions = administrator %>
+<%= redirect_to admin_path %>
+<% else %>
+<%= render ? %>
+<% end %>
