@@ -1,3 +1,9 @@
-<h2 class="user-show"><%= @user.name %></h2>
-<p><%= @user.user_name %></p>
-<%= image_tag @user.avatar, class: "usr-av" %>
+<h2 class="user-show">Name: <%= @user.name %></h2>
+<p>User Name: <%= @user.user_name %></p>
+<p><%= image_tag @user.avatar, class: "usr-av" %></p>
+<p>Permission: <%= @user.permission %></p>
+<p>Admin: <%= @user.admin %></p>
+
+<% if current_user.admin == true %>
+<%= button_to "Make this user an Admin??", edit_user_path, method: :patch, params: {:user => { :permission => "admin" , :admin => true }} %>
+<% end %>
