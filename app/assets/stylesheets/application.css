@@ -36,12 +36,20 @@ body {
   padding-right: 150px;
   display: flex;
 }
+ 
 .header .imgcontent {
   display: inline;
-  max-width: 350px;
+  max-width: 300px;
+  
 }
-.header .header-menu {
+.header .logout {
   display: inline;
+  text-align: right;
+  padding-left: 400px;
+
+}
+/* .header .header-menu {
+  display: inline-table;
   float: right;
   width: 70%;
   font-size: x-large;
@@ -60,7 +68,7 @@ body {
 }
 .each-header-menu-item {
   padding: 20px;
-}
+} */
 
 /* This is where the body is styled */
 
