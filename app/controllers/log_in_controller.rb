@@ -1,5 +1,7 @@
 class LogInController < ApplicationController
 
+  include ApplicationHelper
+
   def login
     @user = User.new
   end
@@ -20,24 +22,5 @@ class LogInController < ApplicationController
     redirect_to login_path
   end
 
-  private
-
-  def logged_in?
-    !!current_user
-  end
-
-  def current_user
-    @user ||= User.find_by_id(session[:user_id])
-  end
-
-  def verify
-    if !logged_in?
-      redirect_to users_path
-    end
-  end
-
-  def log_in_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
-  end
 
 end
