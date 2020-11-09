@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  
+
+  include ApplicationHelper
+
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -19,6 +21,14 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
+  def show
+    if @user.admin == true  
+      redirect_to admin_path(@user)
+    else 
+      render :show
+    end
+  end
+
   def update
     @user.update(user_params)
     redirect_to user_path(@user)
@@ -29,15 +39,5 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  private
 
-  def find_user
-    @user = User.find_by(id: params[:id])
-    redirect_to users_path if !@user
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :username, :avatar, :password, :password_confirmation)
-  end
- 
 end
