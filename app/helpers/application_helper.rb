@@ -14,12 +14,12 @@ module ApplicationHelper
   end
 
   def current_user
-    @user ||= User.find_by_id(session[:user_id])
+    @user ||= User.find_by_id(session[:user_name_id])
   end
 
   def verify
     if !logged_in?
-      redirect_to users_path
+      redirect_to login_path
     end
   end
 
