@@ -18,10 +18,12 @@ class UsersController < ApplicationController
   end
 
   def index
+    byebug
     @user = User.all
   end
 
   def show
+    byebug
     if @user.admin == true  
       redirect_to admin_path(@user)
     else 
@@ -30,11 +32,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    byebug
     @user.update(user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
+    byebug
     @user.destroy
     redirect_to users_path
   end
