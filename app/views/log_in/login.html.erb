@@ -1,24 +1,13 @@
 <h1>Login</h1>
 
-<%= form_with model: @user do |form| %>
-
+<%= form_with model: @login do |form| %>
   <%= render "partials/usererrorform" %>
-  <br>
-  
-  <br>
   <%= form.label :user_name %>
   <%= form.text_field :user_name %>
   <br>
-  
-  <br>  
   <%= form.label :password %>
   <%= form.password_field :password %>
   <br>
-  
-
-  <br>
-  <br>
-
-  <%= form.submit "LogOn"%>
+  <%= form.submit "LogIn"%>
 
 <% end %>
