@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def user_params
-    params.require(:user).permit(:name, :user_name, :avatar, :permission, :admin, :password, :password_confirmation)
+    params.require(:user).permit(:name, :user_name, :avatar, :admin, :password, :password_confirmation)
   end
 
   def logged_in?
@@ -23,5 +23,9 @@ module ApplicationHelper
     end
   end
 
- 
+  def is_admin?
+    current_user.admin
+  end
+
+
 end
