@@ -3,25 +3,27 @@ class LogInController < ApplicationController
   include ApplicationHelper
 
   def login
-    byebug
+    # byebug
     @user = User.new
   end
 
   def post_login
-    byebug
-    @user = User.find_by(user_name: params[:user][:user_name])
-    if @user && @user.authenticate(params[:user_name][:password])
+    # byebug
+    @user = User.find_by(user_name: params[:user_name])
+    if @user.try(:authenticate, params[:password])
       session[:user_name_id] = @user.id
-      redirect_to user_path(@user) 
-      
+      if @user.id == "admin"
+        redirect_to admin_path(@user)
+      else  
+        redirect_to user_path(@user)
+      end
     else
-      @user ||= User.new
-      render :login
+      render :login, alert: "Invalid UserName/Password!!"
     end
   end
 
   def logout
-    byebug
+    # byebug
     session.destroy
     redirect_to login_path
   end
