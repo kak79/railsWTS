@@ -8,8 +8,5 @@ Rails.application.routes.draw do
   resources :users
 
   get 'admin/:id' => 'users#admin', as: "admin"
-  post 'admin/:id' => 'users#post_admin', as: "post_admin"
-
-
-
+  post 'admin/:id' => 'users#post_admin'
 end
