@@ -10,8 +10,6 @@ class User < ApplicationRecord
   
   has_one_attached :avatar
 
-  validates :permission, inclusion: { in: ["member", "admin"] }
-
   validates :admin, inclusion: { in: [true, false] }
 
 
