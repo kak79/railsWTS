@@ -40,13 +40,21 @@ body {
 .header .imgcontent {
   display: inline;
   max-width: 300px;
-  
+}
+.header .newuser {
+  display: inline;
+  text-align: right;
+  padding-left: 400px;
+}
+.header .login {
+  display: inline;
+  text-align: right;
+  padding-left: 100px;
 }
 .header .logout {
   display: inline;
   text-align: right;
-  padding-left: 400px;
-
+  padding-left: 100px;
 }
 /* .header .header-menu {
   display: inline-table;
