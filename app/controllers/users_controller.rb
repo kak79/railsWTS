@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    #byebug
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user)
@@ -18,27 +19,25 @@ class UsersController < ApplicationController
   end
 
   def index
-    byebug
+    # byebug
     @user = User.all
   end
 
   def show
-    byebug
-    if @user.admin == true  
-      redirect_to admin_path(@user)
-    else 
-      render :show
+    if !logged_in?
+      redirect_to login_path
     end
+    
   end
 
   def update
-    byebug
+    # byebug
     @user.update(user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
-    byebug
+    # byebug
     @user.destroy
     redirect_to users_path
   end
