@@ -13,15 +13,7 @@
   <%= form.label :avatar %>
   <%= form.file_field :avatar %>
   <br>
-  <%= form.label :member %>
-  <%= form.radio_button :permission, 'member' %>
-  <%= form.label :admin %>
-  <%= form.radio_button :permission, 'admin' %>
-  <br>
-  <%= form.label :user %>
-  <%= form.radio_button :admin, 'user' %>
-  <%= form.label :admin %>
-  <%= form.radio_button :admin, 'admin' %>
+  <%= form.hidden_field :admin, value: false %>
   <br>  
   <%= form.label :password %>
   <%= form.password_field :password %>
