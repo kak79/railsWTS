@@ -12,6 +12,8 @@
   <body>
     <div class="header">
       <%= image_tag "logo1.jpg", class: "imgcontent" %>
+      <%= link_to "NewUser", new_user_path, method: :get, class: "newuser" %>
+      <%= link_to "LogIn", login_path, method: :get, class: "login" %>
       <%= link_to "LogOut", logout_path, method: :delete, class: "logout" %>
       
     </div>
