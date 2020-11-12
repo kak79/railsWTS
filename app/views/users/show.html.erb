@@ -1,8 +1,18 @@
 <h2 class="user-show">Name: <%= @user.name %></h2>
 <p>User Name: <%= @user.user_name %></p>
 <p><%= image_tag @user.avatar, class: "usr-av" %></p>
-<p>Admin: <%= @user.admin %></p>
+
 
 <% if current_user.admin == true %>
-<%= button_to "Make this user an Admin??", edit_user_path, method: :patch, params: {:user => { :admin => true }} %> 
+<p>Admin: <%= @user.admin %></p>  
+<% end %>
+
+<% if current_user.admin == true %>
+<%= button_to "Make this user an Admin?", user_path(@user), method: :patch, params: {:user => { :admin => true }} %> 
+<% end %>
+<% if current_user.admin == true %>
+<%= button_to "Make this user an Member?", user_path(@user), method: :patch, params: {:user => { :admin => false }} %> 
+<% end %>
+<% if current_user.admin == true %>
+<%= button_to "Delete User?", user_path, method: :delete, params: {:user => { :admin => true }} %> 
 <% end %>
