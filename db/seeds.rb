@@ -11,6 +11,5 @@ user = User.new
 user.name = "admin"
 user.user_name = "admin"
 user.password = "admin"
-user.permission = "admin"
 user.admin = true
 user.save
