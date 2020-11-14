@@ -6,13 +6,15 @@
 <% if current_user.admin == true %>
 <p>Admin: <%= @user.admin %></p>  
 <% end %>
-
+<br>
 <% if current_user.admin == true %>
 <%= button_to "Make this user an Admin?", user_path(@user), method: :patch, params: {:user => { :admin => true }} %> 
 <% end %>
+<br>
 <% if current_user.admin == true %>
 <%= button_to "Make this user an Member?", user_path(@user), method: :patch, params: {:user => { :admin => false }} %> 
 <% end %>
+<br>
 <% if current_user.admin == true %>
 <%= button_to "Delete User?", user_path, method: :delete, params: {:user => { :admin => true }} %> 
 <% end %>
