@@ -8,17 +8,16 @@ class LogInController < ApplicationController
   end
 
   def post_login
-    # byebug
-    @user = User.find_by(user_name: params[:user_name])
-    if @user.try(:authenticate, params[:password])
+    @user = User.find_by(user_name: params[:user][:user_name])
+    if @user.try(:authenticate, params[:user][:password])
       session[:user_name_id] = @user.id
-      if @user.id == "admin"
-        redirect_to admin_path(@user)
-      else  
-        redirect_to user_path(@user)
-      end
+      # if current_user.admin
+      #   redirect_to admin_path(@user)
+      # else  
+         redirect_to user_path(@user)
+      # end
     else
-      render :login, alert: "Invalid UserName/Password!!"
+      render :login
     end
   end
 
