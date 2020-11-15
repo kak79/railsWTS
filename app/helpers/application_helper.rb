@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def find_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by_id(params[:id])
     redirect_to users_path if !@user
   end
 
@@ -15,6 +15,11 @@ module ApplicationHelper
     redirect_to campers_path if !@camper
   end
 
+  def find_owner
+    @owner = Owner.find_by_id(params[:id])
+    redirect_to owners_path if !@owner
+  end
+
   def user_params
     params.require(:user).permit(:name, :user_name, :avatar, :password)
   end
@@ -25,6 +30,10 @@ module ApplicationHelper
 
   def camper_params
     params.require(:camper).permit(:camper_model, :owner, :picture, :year, :description)
+  end
+
+  def owner_params
+    params.require(:owner).permit(:user_id, :car_id, :camper_id)
   end
 
   def logged_in?
