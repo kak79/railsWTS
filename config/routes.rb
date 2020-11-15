@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/logout" => "log_in#logout"
 
   resources :users
+  resources :cars
 
   get 'admin/:id' => 'users#admin', as: "admin"
   post 'admin/:id' => 'users#post_admin'
