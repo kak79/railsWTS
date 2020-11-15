@@ -1,2 +1,3 @@
 <%= render "partials/userform", user: @user ,title: "Edit A User" %>
-
+<br>
+<%= button_to "Delete User?", user_path, method: :delete,  data: {confirm: "Are You Sure?"} %> 
