@@ -1,0 +1,3 @@
+<%= render "partials/camperform", camper: @camper ,title: "Edit A Camper" %>
+<br>
+<%= button_to "Delete Camper", camper_path(@camper), method: :delete, data:  {confirm: "Are You Sure?"} %>
