@@ -1,0 +1,27 @@
+<h1><%= title %></h1>
+
+<%= form_with model: camper do |form| %>
+
+  <%= render "partials/campererrorform" %>
+  <br>
+  <%= form.label :camper_model %>
+  <%= form.text_field :camper_model %>
+  <br>
+  <%= form.label :owner %>
+  <%= form.text_field :owner %>
+  <br>
+  <%= form.label :picture %>
+  <%= form.file_field :picture %>
+  <br>
+  <%= form.label :year %>
+  <%= form.number_field :year %>
+  <br>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <br>
+  <br>
+
+  <%= form.submit %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<h2 class="camper-show">Model Name: <%= @camper.camper_model %></h2>
+<p>Owner Name: <%= @camper.owner %></p>
+<p><%= image_tag @camper.picture, class: "camper_main_pic" %></p>
+<p>Camper Model Year: <%= @camper.year %></p>
+<p>Description of camper: <%= @camper.description %></p>
+
+<%= button_to "Edit Camper?", edit_camper_path(@camper), method: :get %> 

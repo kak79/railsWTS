@@ -1,0 +1,3 @@
+<%= render "partials/ownerform", owner: @owner ,title: "Edit An Owner" %>
+<br>
+<%= button_to "Delete owner?", owner_path, method: :delete,  data: {confirm: "Are You Sure?"} %> 
