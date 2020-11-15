@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_14_171909) do
+ActiveRecord::Schema.define(version: 2020_11_15_183725) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,28 @@ ActiveRecord::Schema.define(version: 2020_11_14_171909) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "campers", force: :cascade do |t|
+    t.string "camper_model"
+    t.string "owner"
+    t.integer "year"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "car_model"
     t.string "owner"
     t.integer "year"
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "camper_id"
+    t.integer "car_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
