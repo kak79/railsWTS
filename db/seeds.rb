@@ -8,8 +8,7 @@
 
 
 user = User.new
-user.name = "admin"
-user.user_name = "admin"
-user.password = "admin"
-user.admin = true
+user.name = "Kim"
+user.user_name = "kim_123"
+user.password = "password"
 user.save
