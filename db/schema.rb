@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_11_15_183725) do
   end
 
   create_table "campers", force: :cascade do |t|
+    t.string "name_brand"
     t.string "camper_model"
-    t.string "owner"
     t.integer "year"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2020_11_15_183725) do
   end
 
   create_table "cars", force: :cascade do |t|
+    t.string "name_brand"
     t.string "car_model"
-    t.string "owner"
     t.integer "year"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_183725) do
   end
 
   create_table "owners", force: :cascade do |t|
+    t.string "owner_name"
     t.integer "user_id"
     t.integer "camper_id"
     t.integer "car_id"
