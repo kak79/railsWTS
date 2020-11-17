@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :owners do
-    get '/all-vehicles', to: 'brands#all-vehicles'
-   
-      resources :campers 
+    resources :campers 
 
-      resources :cars 
+    resources :cars 
   
   end
    
