@@ -3,3 +3,5 @@
 <p><%= image_tag @user.avatar, class: "usr-av" %></p>
 <br>
 <%= button_to "Edit User?", edit_user_path(@user), method: :get %> 
+<br>
+<%= link_to "Owners Home", owners_path, method: :get %>
