@@ -2,18 +2,19 @@ class CarsController < ApplicationController
 
   include ApplicationHelper
 
+  before_action :find_owner
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def new
-    @car = Car.new
+    @car = @owner.cars.new
   end
 
   def create
-    @car = Car.new(car_params)
+    @car = @owner.cars.new(car_params)
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to owner_car_path(@owner,@car)
     else
-      redirect_to new_car_path
+      redirect_to new_owner_car_path
     end
   end
 
@@ -29,12 +30,12 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
-    redirect_to car_path(@car)
+    redirect_to owner_car_path(@owner,@car)
   end
 
   def destroy
     @car.destroy
-    redirect_to cars_path
+    redirect_to owner_cars_path(@owner)
   end
 
 end
