@@ -1,7 +1,7 @@
 <h2 class="car-show">Model Name: <%= @car.car_model %></h2>
-<p>Owner Name: <%= @car.owner %></p>
-<p><%= image_tag @car.picture, class: "car_main_pic" %></p>
+<p>Owner Name: <%# @owner.@car.owner_name %></p>
+<p><%# image_tag @car.picture, class: "car_main_pic" %></p>
 <p>Car Model Year: <%= @car.year %></p>
 <p>Description of Car: <%= @car.description %></p>
 
-<%= button_to "Edit Car?", edit_car_path(@car), method: :get %> 
+<%= button_to "Edit Car?", edit_owner_car_path(@owner,@car), method: :get %> 
