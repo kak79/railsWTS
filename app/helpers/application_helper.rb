@@ -7,12 +7,12 @@ module ApplicationHelper
 
   def find_car
     @car = Car.find_by_id(params[:id])
-    redirect_to cars_path if !@car
+    redirect_to owner_cars_path(@owner) if !@car
   end
 
   def find_camper
     @camper = Camper.find_by_id(params[:id])
-    redirect_to campers_path if !@camper
+    redirect_to owner_campers_path(@owner) if !@camper
   end
 
   def find_owner
