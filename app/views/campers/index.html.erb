@@ -1,3 +1,4 @@
-<% @camper.collect do |camper| %>
-<%= link_to image_tag(camper.picture, class: "camper-thumb"), camper_path(camper)%> 
+<% @owner.camper.each do |camper| %>
+  <%= link_to camper.camper_model, owner_campers_path(camper.owner) %>
+  &nbsp &nbsp 
 <% end %>
