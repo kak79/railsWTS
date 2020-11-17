@@ -1,3 +1,5 @@
 <% @owner.each do |owner| %>
 <%= link_to owner.owner_name, owner_path(owner) %>&nbsp &nbsp 
 <% end %>
+<br><br>
+<%= link_to "New Owner", new_owner_path, method: :get %>

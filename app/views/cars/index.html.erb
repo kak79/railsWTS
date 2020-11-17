@@ -1,5 +1,5 @@
 
-<% @owner.cars.collect do |car| %>
+<% @owner.cars.each do |car| %>
   <%= link_to car.car_model, owner_cars_path(car.owner) %>
   &nbsp &nbsp 
 <% end %>
