@@ -7,11 +7,11 @@
   <%= form.label :owner_name %>
   <%= form.text_field :owner_name %>
   <br>
-  <%= form.hidden_field :user_id %>
-  <%= form.hidden_field :car_id %>
-  <%= form.hidden_field :camper_id %>
+ 
+  <%= form.hidden_field :user_id, value: current_user.id %>
   <br>
 
   <%= form.submit %>
-<br>
+  <br>
 <% end %>
+
