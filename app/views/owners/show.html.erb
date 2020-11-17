@@ -1,3 +1,11 @@
-<h2 class="owner-show">Name: <%= link_to @owner.owner_name %></h2>
+<h2 class="owner-show">Name: <%= @owner.owner_name %></h2>
 <br>
 <%= button_to "Edit Owner?", edit_owner_path(@owner), method: :get %> 
+<br>
+<%= link_to "Cars Home", owner_cars_path(@owner), method: :get %>
+&nbsp &nbsp 
+<%= link_to "Make a New Car", new_owner_car_path(@owner), method: :get %>
+&nbsp &nbsp 
+<%= link_to "Campers Home", owner_campers_path(@owner), method: :get %>
+&nbsp &nbsp 
+<%= link_to "Make a New Camper", new_owner_camper_path(@owner), method: :get %>
