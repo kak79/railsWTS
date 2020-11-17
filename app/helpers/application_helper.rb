@@ -33,7 +33,7 @@ module ApplicationHelper
   end
 
   def owner_params
-    params.require(:owner).permit(:user_id, :car_id, :camper_id)
+    params.require(:owner).permit(:owner_name, :user_id)
   end
 
   def logged_in?
