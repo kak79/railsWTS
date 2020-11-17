@@ -12,9 +12,11 @@
   <body>
     <div class="header">
       <%= image_tag "logo1.jpg", class: "imgcontent" %>
+      
+      <%= link_to "Home", users_path, method: :get, class: "user" %>
       <%= link_to "NewUser", new_user_path, method: :get, class: "newuser" %>
-      <%= link_to "LogIn", new_login_path, method: :get, class: "login" %>
-      <%# link_to "LogOut", login_path(@user), method: :delete, class: "logout" %>
+      <%= link_to "LogIn", login_path, method: :get, class: "login" %>
+      <%= link_to "LogOut", logout_path, method: :delete, class: "logout" %>
       
     </div>
   
@@ -25,8 +27,7 @@
         <ul>
           <li><a href="http://www.facebook.com"><%= image_tag "facebook.jpg", class: "each-footer-menu-item", size: "50x50" %></a></li>
           <li><a href='http://www.twitter.com'><%= image_tag "twitter.jpg", class: "each-footer-menu-item", size: "50x50" %></a></li>   
-          <li><a href="http://www.pinterest.com" ><%= image_tag "pinterest.png", class: "each-footer-menu-item", size: "50x50" %></a></li>
-          <li><a href='http://www.instagram.com'><%= image_tag "instagram.png", class: "each-footer-menu-item", size: "50x50" %></a></li>
+          <li><a href="http://www.google.com" ><%= image_tag "google-plus.png", class: "each-footer-menu-item", size: "50x50" %></a></li>
         </ul>
       </div>   
     </footer>
