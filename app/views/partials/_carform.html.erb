@@ -4,11 +4,12 @@
 
   <%= render "partials/carerrorform" %>
   <br>
+  <%= form.label :brand_name %>
+  <%= form.text_field :brand_name %>
+  <br> 
   <%= form.label :car_model %>
   <%= form.text_field :car_model %>
-  <br>
-  <%= form.label :owner %>
-  <%= form.text_field :owner %>
+  <%# form.hidden_field :owner_name, value: @owner.owner_name %>
   <br>
   <%= form.label :picture %>
   <%= form.file_field :picture %>
