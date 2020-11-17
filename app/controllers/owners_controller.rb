@@ -19,6 +19,8 @@ class OwnersController < ApplicationController
 
   def index
     @owner = Owner.all
+    @cars = Car.all
+    @campers = Camper.all
   end
 
   def show
