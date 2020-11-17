@@ -18,7 +18,7 @@ class CarsController < ApplicationController
   end
 
   def index
-    @car = Car.all
+    @cars = Car.all
   end
 
   def show
