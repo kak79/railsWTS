@@ -15,6 +15,11 @@ module ApplicationHelper
     redirect_to owner_campers_path(@owner) if !@camper
   end
 
+  def set_owner
+    @owner = Owner.find_by_id(params[:owner_id])
+    redirect_to owners_path if !@owner
+  end
+
   def find_owner
     @owner = Owner.find_by_id(params[:id])
     redirect_to owners_path if !@owner
@@ -25,11 +30,11 @@ module ApplicationHelper
   end
 
   def car_params
-    params.require(:car).permit(:car_model, :owner, :picture, :year, :description)
+    params.require(:car).permit(:car_model, :owner, :picture, :year, :description, :owner_id)
   end
 
   def camper_params
-    params.require(:camper).permit(:camper_model, :owner, :picture, :year, :description)
+    params.require(:camper).permit(:camper_model, :owner, :picture, :year, :description, :owner_id)
   end
 
   def owner_params
