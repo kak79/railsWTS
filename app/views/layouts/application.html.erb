@@ -14,10 +14,17 @@
       <%= image_tag "logo1.jpg", class: "imgcontent" %>
       
       <%= link_to "Home", users_path, method: :get, class: "user" %>
-      <%= link_to "NewUser", new_user_path, method: :get, class: "newuser" %>
-      <%= link_to "LogIn", login_path, method: :get, class: "login" %>
-      <%= link_to "LogOut", logout_path, method: :delete, class: "logout" %>
-      
+      <% if logged_in? %>
+        <%= link_to "Edit User", edit_user_path(current_user), method: :get, class: "edituser" %>
+      <% else %>
+        <%= link_to "New User", new_user_path, method: :get, class: "newuser" %>
+      <% end %>
+      <% if logged_in? %>
+        <%= link_to "Log Out", logout_path, method: :delete, class: "logout" %>
+      <% else %>
+        <%= link_to "Log In", login_path, method: :get, class: "login" %>
+      <% end %>
+
     </div>
   
     <%= yield %>
