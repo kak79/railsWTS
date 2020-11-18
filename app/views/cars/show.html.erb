@@ -1,6 +1,6 @@
 <p>Car Brand: <%= @car.name_brand %></p>
 <p>Model Name: <%= @car.car_model %></p>
-<p>Owner Name: <% @owner.owner_name %></p>
+<p>Owner Name: <%= @owner.owner_name %></p>
 <p><%= image_tag @car.picture, class: "car_main_pic" %></p>
 <p>Car Model Year: <%= @car.year %></p>
 <p>Description of Car: <%= @car.description %></p>
@@ -9,7 +9,3 @@
 <br><br>
 <%= link_to "Owners Home", owners_path, method: :get %>
 &nbsp &nbsp
-<%= link_to "Cars Home", owner_cars_path(@owner), method: :get %>
-&nbsp &nbsp 
-<%= link_to "Campers Home", owner_campers_path(@owner), method: :get %>
-&nbsp &nbsp 
