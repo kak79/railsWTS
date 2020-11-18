@@ -2,6 +2,8 @@
 <br>
 <%= button_to "Edit Owner?", edit_owner_path(@owner), method: :get %> 
 <br>
+<%= link_to "Owners Home", owners_path, method: :get %>
+&nbsp &nbsp
 <%= link_to "Cars Home", owner_cars_path(@owner), method: :get %>
 &nbsp &nbsp 
 <%= link_to "Make a New Car", new_owner_car_path(@owner), method: :get %>
