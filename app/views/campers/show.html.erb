@@ -1,7 +1,7 @@
 <p>Camper Brand: <%= @camper.name_brand %></p>
 <p>Model Name: <%= @camper.camper_model %></p>
 <p>Owner Name: <% @owner.owner_name %></p>
-<p><%= image_tag @camper.picture, class: "camper_main_pic", if camper.picture.present? %></p>
+<p><%= image_tag @camper.picture, class: "camper_main_pic" if @camper.picture.present? %></p>
 <p>Camper Model Year: <%= @camper.year %></p>
 <p>Description of Camper: <%= @camper.description %></p>
 
