@@ -1,3 +1,3 @@
-<%= render "partials/camperform", camper: @camper ,title: "Edit A Camper" %>
+<%= render "partials/camperform", camper: @camper ,title: "Edit A Camper", url: owner_camper_path(@owner,@camper) %>
 <br>
-<%= button_to "Delete Camper", camper_path(@camper), method: :delete, data:  {confirm: "Are You Sure?"} %>
+<%= button_to "Delete Camper", owner_camper_path(@owner,@camper), method: :delete, data:  {confirm: "Are You Sure?"} %>
