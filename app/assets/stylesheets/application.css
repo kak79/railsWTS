@@ -36,7 +36,11 @@ body {
   padding-right: 150px;
   display: flex;
 }
- 
+.header a {
+  display: inline;
+  text-align: right;
+  padding-right: 50px;
+}
 .header .imgcontent {
   display: inline;
   max-width: 300px;
@@ -46,21 +50,7 @@ body {
   text-align: right;
   padding-left: 200px;
 }
-.header .newuser {
-  display: inline;
-  text-align: right;
-  padding-left: 50px;
-}
-.header .login {
-  display: inline;
-  text-align: right;
-  padding-left: 50px;
-}
-.header .logout {
-  display: inline;
-  text-align: right;
-  padding-left: 50px;
-}
+
 
 /* This is where the body is styled */
 
