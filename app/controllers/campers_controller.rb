@@ -2,23 +2,25 @@ class CampersController < ApplicationController
 
   include ApplicationHelper
 
+  
+  before_action :set_owner
   before_action :find_camper, only: [:show, :edit, :update, :destroy]
 
   def new
-    @camper = Camper.new
+    @camper = @owner.campers.new
   end
 
   def create
-    @camper = Camper.new(camper_params)
+    @camper = @owner.campers.new(camper_params)
     if @camper.save
-      redirect_to camper_path(@camper)
+      redirect_to owner_camper_path(@owner,@camper)
     else
-      redirect_to new_camper_path
+      redirect_to new_owner_camper_path
     end
   end
 
   def index
-    @camper = Camper.all
+    @campers = Camper.all
   end
 
   def show
@@ -29,12 +31,12 @@ class CampersController < ApplicationController
 
   def update
     @camper.update(camper_params)
-    redirect_to camper_path(@camper)
+    redirect_to owner_camper_path(@owner,@camper)
   end
 
   def destroy
     @camper.destroy
-    redirect_to campers_path
+    redirect_to owner_campers_path(@owner)
   end
 
 end

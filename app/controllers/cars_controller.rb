@@ -2,7 +2,7 @@ class CarsController < ApplicationController
 
   include ApplicationHelper
 
-  before_action :find_owner
+  before_action :set_owner
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def new
