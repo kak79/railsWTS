@@ -1,7 +1,15 @@
-<h2 class="camper-show">Model Name: <%= @camper.camper_model %></h2>
-<p>Owner Name: <%= @camper.owner %></p>
+<p>Camper Brand: <%= @camper.name_brand %></p>
+<p>Model Name: <%= @camper.camper_model %></p>
+<p>Owner Name: <% @owner.owner_name %></p>
 <p><%= image_tag @camper.picture, class: "camper_main_pic" %></p>
 <p>Camper Model Year: <%= @camper.year %></p>
-<p>Description of camper: <%= @camper.description %></p>
+<p>Description of Camper: <%= @camper.description %></p>
 
-<%= button_to "Edit Camper?", edit_camper_path(@camper), method: :get %> 
+<%= button_to "Edit Camper?", edit_owner_camper_path(@owner,@camper), method: :get %> 
+<br><br>
+<%= link_to "Owners Home", owners_path, method: :get %>
+&nbsp &nbsp
+<%= link_to "Cars Home", owner_cars_path(@owner), method: :get %>
+&nbsp &nbsp 
+<%= link_to "Campers Home", owner_campers_path(@owner), method: :get %>
+&nbsp &nbsp 
