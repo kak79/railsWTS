@@ -1,6 +1,6 @@
 <h1><%= title %></h1>
 
-<%= form_with model: car do |form| %>
+<%= form_with model: car, url: url, local: true  do |form| %>
 
   <%= render "partials/carerrorform" %>
   <br>
@@ -9,7 +9,9 @@
   <br> 
   <%= form.label :car_model %>
   <%= form.text_field :car_model %>
-  <%# form.hidden_field :owner_name, value: @owner.owner_name %>
+  <br>
+  <%= form.label :owner %>
+  <%= form.collection_select :owner_id, Owner.all, :id, :owner_name %>
   <br>
   <%= form.label :picture %>
   <%= form.file_field :picture %>

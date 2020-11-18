@@ -1,14 +1,17 @@
 <h1><%= title %></h1>
 
-<%= form_with model: camper do |form| %>
+<%= form_with model: camper, url: url, local: true  do |form| %>
 
   <%= render "partials/campererrorform" %>
   <br>
+  <%= form.label :brand_name %>
+  <%= form.text_field :brand_name %>
+  <br> 
   <%= form.label :camper_model %>
   <%= form.text_field :camper_model %>
   <br>
   <%= form.label :owner %>
-  <%= form.text_field :owner %>
+  <%= form.collection_select :owner_id, Owner.all, :id, :owner_name %>
   <br>
   <%= form.label :picture %>
   <%= form.file_field :picture %>
