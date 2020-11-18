@@ -1,6 +1,6 @@
 <h1><%= title %></h1>
 
-<%= form_with model: user do |form| %>
+<%= form_with model: user, local: true do |form| %>
 
   <%= render "partials/usererrorform" %>
   <br>
