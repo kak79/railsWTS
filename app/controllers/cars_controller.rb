@@ -20,6 +20,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    redirect_to owner_path(@owner)
   end
 
   def show

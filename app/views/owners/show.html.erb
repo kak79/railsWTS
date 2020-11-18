@@ -1,13 +1,19 @@
-<h2 class="owner-show">Name: <%= @owner.owner_name %></h2>
+<h1 class="own-nm"><%="#{@owner.owner_name}"%>'s garage</h1>
+<% @owner.cars.collect do |car| %>
+<%= link_to image_tag(car.picture, class: "car-thumb"), owner_car_path(car.owner_id, car) %>
+<% end %>
+<% @owner.campers.collect do |camper| %>
+<%= link_to image_tag(camper.picture, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) %>
+<% end %>
 <br>
+
 <%= button_to "Edit Owner?", edit_owner_path(@owner), method: :get %> 
 <br>
+
 <%= link_to "Owners Home", owners_path, method: :get %>
 &nbsp &nbsp
-<%= link_to "Cars Home", owner_cars_path(@owner), method: :get %>
-&nbsp &nbsp 
+
 <%= link_to "Make a New Car", new_owner_car_path(@owner), method: :get %>
 &nbsp &nbsp 
-<%= link_to "Campers Home", owner_campers_path(@owner), method: :get %>
-&nbsp &nbsp 
+
 <%= link_to "Make a New Camper", new_owner_camper_path(@owner), method: :get %>

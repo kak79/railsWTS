@@ -21,6 +21,7 @@ class CampersController < ApplicationController
 
   def index
     @campers = Camper.all
+    redirect_to owner_path(@owner)
   end
 
   def show
