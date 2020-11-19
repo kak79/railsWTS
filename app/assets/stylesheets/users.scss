@@ -6,9 +6,16 @@
 body {
   margin: 10px 20px;
   font-size: large;
+  text-indent: 35px;
 }
-
+.usrNm {
+  padding-inline-start: 10px;
+}
 .usr-av {
   width: 100px;
   padding: 10px
+}
+
+a {
+  padding-inline-start: 75px; 
 }
