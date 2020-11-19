@@ -1,0 +1,45 @@
+<h1><%= title %></h1>
+
+<%= form_with model: car, url: url, local: true  do |form| %>
+
+  <%= render "partials/carerrorform" %>
+  <br>
+  <%= form.label :car %>
+  <%= form.collection_select :car_id, Car.all, :id, :car_model %>
+  <br>  
+  <%= form.label :picture_1 %>
+  <%= form.file_field :picture_1 %>
+  <br> 
+  <%= form.label :description_1 %>
+  <%= form.text_field :description_1 %>
+  <br>
+  <%= form.label :picture_2 %>
+  <%= form.file_field :picture_2 %>
+  <br> 
+  <%= form.label :description_2 %>
+  <%= form.text_field :description_2 %>
+  <br>
+  <%= form.label :picture_3 %>
+  <%= form.file_field :picture_3 %>
+  <br> 
+  <%= form.label :description_3 %>
+  <%= form.text_field :description_3 %>
+  <br>
+  <%= form.label :picture_4 %>
+  <%= form.file_field :picture_4 %>
+  <br> 
+  <%= form.label :description_4 %>
+  <%= form.text_field :description_4 %>
+  <br>
+  <%= form.label :picture_5 %>
+  <%= form.file_field :picture_5 %>
+  <br> 
+  <%= form.label :description_5 %>
+  <%= form.text_field :description_5 %>
+  
+  <br>
+  <br>
+
+  <%= form.submit %>
+
+<% end %>

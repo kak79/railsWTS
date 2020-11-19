@@ -1,0 +1,3 @@
+<%= render "partials/carform", car: @car ,title: "Edit A Car", url: owner_car_path(@owner,@car) %>
+<br>
+<%= button_to "Delete Car", owner_car_path(@owner,@car), method: :delete, data:  {confirm: "Are You Sure?"} %>

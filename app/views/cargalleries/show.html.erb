@@ -1,0 +1,11 @@
+<p>Car Brand: <%= @car.name_brand %></p>
+<p>Model Name: <%= @car.car_model %></p>
+<p>Owner Name: <%= @owner.owner_name %></p>
+<p><%= image_tag @car.picture, class: "car_main_pic" if @car.picture.present? %></p>
+<p>Car Model Year: <%= @car.year %></p>
+<p>Description of Car: <%= @car.description %></p>
+
+<%= button_to "Edit Car?", edit_owner_car_path(@owner,@car), method: :get %> 
+<br><br>
+<%= link_to "Owners Home", owners_path, method: :get %>
+&nbsp &nbsp
