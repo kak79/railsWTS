@@ -58,11 +58,11 @@ module ApplicationHelper
   end
 
   def cargallery_params
-    params.require(:cargallery).permit(:car_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
+    params.require(:cargallery).permit(:owner_id, :car_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
   end
 
   def campergallery_params
-    params.require(:campergallery).permit(:camper_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
+    params.require(:campergallery).permit(:owner_id, :camper_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
   end
 
   def owner_params
@@ -81,6 +81,14 @@ module ApplicationHelper
     if !logged_in?
       redirect_to login_path
     end
+  end
+
+  def current_owner
+    
+  end
+
+  def current_car
+
   end
 
 end
