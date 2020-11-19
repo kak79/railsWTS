@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   resources :owners do
     resources :campers do
-       resources :campgalleries
+       resources :campgalleries, except: [:destroy]
     end
   end
   resources :owners do  
     resources :cars do
-      resources :cargalleries
+      resources :cargalleries, except: [:destroy]
     end
   end
    
