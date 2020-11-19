@@ -1,0 +1,3 @@
+<% @owner.cars.cargallery.collect do |cargallery| %>
+<%= link_to image_tag(cargallery.picture, class: "cargall-thumb"), owner_car_cargallery_path(cargallery.owner_id, cargallery.car, cargallery) if cargallery.picture.present? %> &nbsp &nbsp
+<% end %>
