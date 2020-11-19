@@ -1,7 +1,7 @@
 <h1><%= title %></h1>
 
-<%= form_with model: cargallery, url: url, local: true  do |form| %>
-  <%= render "partials/cargallerrorform" %>
+<%= form_with model: campgallery, url: url, local: true  do |form| %>
+  <%= render "partials/campgallerrorform" %>
   <br>
   <%= form.hidden_field :owner_id, value: current_owner.id %>
   <%= form.hidden_field :car_id, value: current_car.id %>
