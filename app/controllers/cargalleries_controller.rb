@@ -1,4 +1,4 @@
-class CarsController < ApplicationController
+class CargalleriesController < ApplicationController
   include ApplicationHelper
   before_action :set_owner
   before_action :set_car
@@ -19,7 +19,6 @@ class CarsController < ApplicationController
 
   def index
     @cargalleries = Cargallery.all
-    redirect_to owner_path(@owner)
   end
 
   def update
