@@ -1,10 +1,10 @@
 class Cargallery < ApplicationRecord
 
-  has_many :cars 
-  has_many :owners, through: :cars
+  has_one :car 
+  has_one :owner, through: :car
 
-  has_many_attached :car_images
+  has_many_attached :car_image
 
-  validates :description 
+ 
   
 end
