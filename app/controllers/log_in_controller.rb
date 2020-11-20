@@ -21,5 +21,17 @@ class LogInController < ApplicationController
     redirect_to login_path
   end
 
+  def google_login
+    name = request.env['omniauth.auth']['info']['name']
+    user_name = request.env['omniauth.auth']['uid']
+    avatar = request.env['omniauth.auth']['info']['image']
+    User.find_or_create_by(user_name: user_name) do |user|
+      user.name = name
+      user.avatar = avatar
+      user.password = SecureRandom.hex
+    end
+    session[:user_name_id] = @user.id
+    redirect_to user_path(@user)
+  end
 
 end
