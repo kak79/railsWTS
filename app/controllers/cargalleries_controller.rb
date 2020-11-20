@@ -1,41 +1,42 @@
 class CargalleriesController < ApplicationController
   include ApplicationHelper
-  before_action :set_owner
+  
   before_action :set_car
   before_action :find_cargallery, only: [:show, :edit, :update]
 
+  def index
+    @cargallery = @car.cargallery 
+    @car_images = @cargallery.car_image.all
+   
+  end
+
   def new
-    @cargallery = @car.cargalleries.new
+    @cargallery = Cargallery.new
   end
 
   def create
-    @cargallery = @car.cargalleries.new(cargallery_params)
+    @cargallery = Cargallery.new(cargallery_params)
+    @cargallery.car = @car
+    #binding.pry
     if @cargallery.save
-      if params[:cargallery]['car_image'].length <= 10
-        params[:cargallery]['car_image'].each do |a|
-           @cargallery = @car.cargallery.create!(:car_image => a, :car_id => @car.id)
-      end
-    elsif params[:cargallery]['car_image'].length > 10
-      flash[:error] = '!'
-      redirect_to ????
-      return false
-      redirect_to @car, notice: "Car Gallery Saved" 
+      redirect_to car_cargallery_path(@car,@cargallery)
     else
-     if params[:cargallery]['car_image'].length > 10
-        @car.errors[:base] << "Maximuim 10 pictures."
-     end
-     redirect_to new_owner_car_cargallery_path(@owner,@car)
+     redirect_to new_car_cargallery_path(@car)
     end
   end
 
   def update
     @cargallery.update(car_params)
-    redirect_to owner_car_cargallery_path(@owner,@car,@cargallery)
+    redirect_to car_cargallery_path(@car,@cargallery)
   end
 
   def show
+    @cargallery = @car.cargallery 
+    @car_images = @cargallery.car_image.all
+
+    
     if !@car.cargallery.present?
-      redirect_to new_owner_car_cargallery_path(@owner,@car)
+      redirect_to new_car_cargallery_path(@car)
     end
   end
   
