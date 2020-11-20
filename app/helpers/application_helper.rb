@@ -16,13 +16,13 @@ module ApplicationHelper
   end
 
   def find_campgallery
-    @camper = Campgallery.find_by_id(params[:id])
+    @campgallery = Campgallery.find_by_id(params[:id])
     redirect_to owner_camper_campgalleries_path(@owner,@camper) if !@campgallery
   end  
   
   def find_cargallery
-  @car = Cargallery.find_by_id(params[:id])
-  redirect_to owner_car_cargalleries_path(@owner,@car) if !@cargallery
+    @cargallery = Cargallery.find_by_id(params[:id])
+    redirect_to owner_car_cargalleries_path(@owner,@car) if !@cargallery
   end
 
   def set_camper
@@ -58,11 +58,11 @@ module ApplicationHelper
   end
 
   def cargallery_params
-    params.require(:cargallery).permit(:owner_id, :car_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
+    params.require(:cargallery).permit(:owner_id, :car_id, :picture_1, :description_1, :picture_2, :description_2, :picture_3, :description_3, :picture_4, :description_4, :picture_5, :description_5)
   end
 
-  def campergallery_params
-    params.require(:campergallery).permit(:owner_id, :camper_id, :pic_id_1, :description_1, :pic_id_2, :description_2, :pic_id_3, :description_3, :pic_id_4, :description_4, :pic_id_5, :description_5)
+  def campgallery_params
+    params.require(:campgallery).permit(:owner_id, :camper_id, :picture_1, :description_1, :picture_2, :description_2, :picture_3, :description_3, :picture_4, :description_4, :picture_5, :description_5)
   end
 
   def owner_params
