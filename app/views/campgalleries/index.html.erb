@@ -1,3 +1,0 @@
-<% @cars.campgallery.collect do |cargallery| %>
-<%= link_to image_tag(cargallery.picture, class: "campgall-thumb"), owner_camper_campgallery_path(campgallery.owner_id, campgallery.car, campgallery) if campgallery.picture.present? %> &nbsp &nbsp
-<% end %>
