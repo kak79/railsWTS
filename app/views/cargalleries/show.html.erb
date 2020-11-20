@@ -1,8 +1,0 @@
-<%# if !@cargallery&.empty? %>
-<%= image_tag @car_image, class: "car_pic" %>
-<p class="desc"> Picture Description: <%= @cargallery.description %></p>
-<%# end %>
-
-<br><br>
-
-<%= button_to "Edit Car Gallery?", edit_car_cargallery_path(@car,@cargallery), method: :get %> 

@@ -2,8 +2,7 @@ class Car < ApplicationRecord
 
   has_many :owners
   has_many :users, through: :owners
-  has_one :cargallery, dependent: :destroy
-
+  
   has_one_attached :picture
 
   validates :car_model, presence: true

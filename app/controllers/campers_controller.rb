@@ -15,7 +15,7 @@ class CampersController < ApplicationController
     if @camper.save
       redirect_to owner_camper_path(@owner,@camper)
     else
-      redirect_to new_owner_camper_path
+      redirect_to new_owner_camper_path(@owner)
     end
   end
 
@@ -31,8 +31,12 @@ class CampersController < ApplicationController
   end
 
   def update
-    @camper.update(camper_params)
-    redirect_to owner_camper_path(@owner,@camper)
+    if !@camper
+      redirect_to new_owner_camper_path(@owner)
+    else
+      @camper.update(camper_params)
+      redirect_to owner_camper_path(@owner,@camper)
+    end
   end
 
   def destroy

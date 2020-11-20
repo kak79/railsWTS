@@ -8,15 +8,6 @@ Rails.application.routes.draw do
   resources :owners, only: [] do  
     resources :cars 
   end
-
-  resources :campers, only: [] do
-    resources :campgalleries, except: [:destroy]
- end
-
-  resources :cars, only: [] do
-    resources :cargalleries, except: [:destroy]
-  end
-
    
   get    "/login"  =>  "log_in#login"
   post   "/login"  =>  "log_in#post_login"

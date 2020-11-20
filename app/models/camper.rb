@@ -2,8 +2,7 @@ class Camper < ApplicationRecord
 
   has_many :owners
   has_many :users, through: :owners
-  has_many :campgalleries, dependent: :destroy
-
+  
   has_one_attached :picture
 
   validates :camper_model, presence: true
