@@ -1,7 +1,9 @@
 <p>Car Brand: <%= @car.name_brand %></p>
 <p>Model Name: <%= @car.car_model %></p>
 <p>Owner Name: <%= @owner.owner_name %></p>
-<p><%= link_to image_tag(@car.picture, class: "car_main_pic") if @car.picture.present?, owner_car_cargallery_path(@owner,@car,@cargallery) if @car.cargallery.present? %></p>
+<% if @car.picture.present? %>
+<p><%= link_to image_tag(@car.picture, class: "car_main_pic"), owner_car_cargallery_path(@owner,@car,@cargallery) unless @car.cargalleries&.empty? %></p>
+<% end %>
 <p>Car Model Year: <%= @car.year %></p>
 <p>Description of Car: <%= @car.description %></p>
 
