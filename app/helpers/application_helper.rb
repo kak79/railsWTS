@@ -58,7 +58,7 @@ module ApplicationHelper
   end
 
   def cargallery_params
-    params.require(:cargallery).permit(:car_id, :car_image, :description)
+    params.require(:cargallery).permit(:car_id, :description, car_image:[] )
   end
 
   def campgallery_params
