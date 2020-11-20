@@ -3,35 +3,34 @@
 <%= form_with model: cargallery, url: url, local: true  do |form| %>
   <%= render "partials/cargallerrorform" %>
   <br>
-  <%= form.hidden_field :owner_id, value: current_owner.id %>
-  <%= form.hidden_field :car_id, value: current_car.id %>
+  <%= form.hidden_field :car_id, value: @car.id %>
   <br>  
   <%= form.label :picture_1 %>
-  <%= form.file_field :picture_1 %>
+  <%= form.file_field :picture %>
   <br> 
   <%= form.label :description_1 %>
   <%= form.text_field :description_1 %>
   <br>
   <%= form.label :picture_2 %>
-  <%= form.file_field :picture_2 %>
+  <%= form.file_field :picture %>
   <br> 
   <%= form.label :description_2 %>
   <%= form.text_field :description_2 %>
   <br>
   <%= form.label :picture_3 %>
-  <%= form.file_field :picture_3 %>
+  <%= form.file_field :picture %>
   <br> 
   <%= form.label :description_3 %>
   <%= form.text_field :description_3 %>
   <br>
   <%= form.label :picture_4 %>
-  <%= form.file_field :picture_4 %>
+  <%= form.file_field :picture %>
   <br> 
   <%= form.label :description_4 %>
   <%= form.text_field :description_4 %>
   <br>
   <%= form.label :picture_5 %>
-  <%= form.file_field :picture_5 %>
+  <%= form.file_field :picture %>
   <br> 
   <%= form.label :description_5 %>
   <%= form.text_field :description_5 %>

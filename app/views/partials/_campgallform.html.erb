@@ -3,8 +3,7 @@
 <%= form_with model: campgallery, url: url, local: true  do |form| %>
   <%= render "partials/campgallerrorform" %>
   <br>
-  <%= form.hidden_field :owner_id, value: current_owner.id %>
-  <%= form.hidden_field :car_id, value: current_car.id %>
+  <%= form.hidden_field :camper_id, value: @camper.id %>
   <br>  
   <%= form.label :picture_1 %>
   <%= form.file_field :picture_1 %>
