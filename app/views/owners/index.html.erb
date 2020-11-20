@@ -1,5 +1,5 @@
-<% @owner.each do |owner| %>
-<h1><%= link_to owner.owner_name, owner_path(owner) %> </h1>&nbsp &nbsp 
-<% end %>
+<p class="own-nm"><% @owner.each do |owner| %>
+<%= link_to owner.owner_name,owner_path(owner)%>
+<% end %></p>
 <br><br>
 <%= link_to "New Owner", new_owner_path, method: :get %>
