@@ -46,32 +46,14 @@ ActiveRecord::Schema.define(version: 2020_11_18_235503) do
 
   create_table "campgalleries", force: :cascade do |t|
     t.integer "camper_id"
-    t.string "picture_1"
     t.string "description_1"
-    t.string "picture_2"
-    t.string "description_2"
-    t.string "picture_3"
-    t.string "description_3"
-    t.string "picture_4"
-    t.string "description_4"
-    t.string "picture_5"
-    t.string "description_5"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cargalleries", force: :cascade do |t|
     t.integer "car_id"
-    t.string "picture_1"
-    t.string "description_1"
-    t.string "picture_2"
-    t.string "description_2"
-    t.string "picture_3"
-    t.string "description_3"
-    t.string "picture_4"
-    t.string "description_4"
-    t.string "picture_5"
-    t.string "description_5"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -97,7 +79,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_235503) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "email"
     t.string "user_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

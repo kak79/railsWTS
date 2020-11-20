@@ -2,7 +2,7 @@
 <p>Model Name: <%= @car.car_model %></p>
 <p>Owner Name: <%= @owner.owner_name %></p>
 <% if @car.picture.present? %>
-<p><%= link_to image_tag(@car.picture, class: "car_main_pic"), owner_car_cargallery_path(@owner,@car,@cargallery) unless @car.cargalleries&.empty? %></p>
+<p><%= link_to image_tag(@car.picture, class: "car_main_pic"), car_cargalleries_path(@car)  %></p>
 <% end %>
 <p>Car Model Year: <%= @car.year %></p>
 <p>Description of Car: <%= @car.description %></p>

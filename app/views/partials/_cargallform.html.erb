@@ -6,10 +6,10 @@
   <%= form.hidden_field :car_id, value: @car.id %>
   <br>  
   <%= form.label :car_image %>
-  <%= form.file_field :car_image %>
+  <%= form.file_field :car_image, multiple: true %>
   <br> 
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_field :description, multiple: true %>
   <br>
   
   

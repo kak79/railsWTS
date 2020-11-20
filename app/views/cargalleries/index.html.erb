@@ -1,0 +1,5 @@
+<% @car_images.each do |car_image| %>
+<%= image_tag(car_image) %>
+<% end %>
+<br><br>
+<%= link_to "New Car Gallery", new_car_cargallery_path(@car), method: :get %>

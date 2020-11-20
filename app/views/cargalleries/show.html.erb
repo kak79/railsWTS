@@ -1,15 +1,8 @@
-
-<%= image_tag(@cargallery.picture_1, class: "car_pic") if @cargallery.picture_1.present? %>
-<p class="desc">Description Picture: <%= @cargallery.description_1 %></p>
-<%= image_tag(@cargallery.picture_2, class: "car_pic") if @cargallery.picture_2.present? %>
-<p class="desc">Description Picture: <%= @cargallery.description_2 %></p>
-<%= image_tag(@cargallery.picture_3, class: "car_pic") if @cargallery.picture_3.present? %>
-<p class="desc">Description Picture: <%= @cargallery.description_3 %></p>
-<%= image_tag(@cargallery.picture_4, class: "car_pic") if @cargallery.picture_4.present? %>
-<p class="desc">Description Picture: <%= @cargallery.description_4 %></p>
-<%= image_tag(@cargallery.picture_5, class: "car_pic") if @cargallery.picture_5.present? %>
-<p class="desc">Description Picture: <%= @cargallery.description_5 %></p>
+<%# if !@cargallery&.empty? %>
+<%= image_tag @car_image, class: "car_pic" %>
+<p class="desc"> Picture Description: <%= @cargallery.description %></p>
+<%# end %>
 
 <br><br>
 
-<%= button_to "Edit Car Gallery?", edit_owner_car_cargallery_path(@owner,@car), method: :get %> 
+<%= button_to "Edit Car Gallery?", edit_car_cargallery_path(@car,@cargallery), method: :get %> 

@@ -2,16 +2,21 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :owners do
-    resources :campers do
-       resources :campgalleries, except: [:index, :destroy]
-    end
+    resources :campers 
   end
   
-  resources :owners do  
-    resources :cars do
-      resources :cargalleries, except: [:index, :destroy]
-    end
+  resources :owners, only: [] do  
+    resources :cars 
   end
+
+  resources :campers, only: [] do
+    resources :campgalleries, except: [:destroy]
+ end
+
+  resources :cars, only: [] do
+    resources :cargalleries, except: [:destroy]
+  end
+
    
   get    "/login"  =>  "log_in#login"
   post   "/login"  =>  "log_in#post_login"
