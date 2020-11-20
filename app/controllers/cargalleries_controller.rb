@@ -17,17 +17,15 @@ class CargalleriesController < ApplicationController
     end
   end
 
-  def index
-    @cargalleries = Cargallery.all
-    if !@cargalleries.present?
-      redirect_to new_owner_car_cargallery_path(@owner,@car)
-    end
-  end
-
   def update
     @cargallery.update(car_params)
     redirect_to owner_car_cargallery_path(@owner,@car,@cargallery)
   end
 
+  def show
+    if !@car.cargallery.present?
+      redirect_to new_owner_car_cargallery_path(@owner,@car)
+    end
+  end
   
 end

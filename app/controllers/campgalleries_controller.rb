@@ -17,13 +17,6 @@ class CampgalleriesController < ApplicationController
     end
   end
 
-  def index
-    @campgalleries = Campgallery.all
-    if !@campgalleries.present?
-      redirect_to new_owner_camper_campgallery_path(@owner,@camper)
-    end
-  end
-
   def update
     @campgallery.update(campgallery_params)
     redirect_to owner_camper_campgallery_path(@owner,@camper,@campgallery)
