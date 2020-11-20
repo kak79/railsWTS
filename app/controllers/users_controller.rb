@@ -17,10 +17,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    @user = User.all
-  end
-
   def show
     if !logged_in?
       redirect_to login_path
@@ -31,10 +27,4 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user)
   end
-
-  def destroy
-    @user.destroy
-    redirect_to users_path
-  end
-
 end
