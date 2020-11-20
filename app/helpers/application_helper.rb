@@ -46,23 +46,23 @@ module ApplicationHelper
   end
 
   def user_params
-    params.require(:user).permit(:name, :user_name, :avatar, :password)
+    params.require(:user).permit(:email, :user_name, :avatar, :password)
   end
 
   def car_params
-    params.require(:car).permit(:car_model, :owner, :picture, :year, :description, :owner_id)
+    params.require(:car).permit(:name_brand, :car_model, :owner, :picture, :year, :description, :owner_id)
   end
 
   def camper_params
-    params.require(:camper).permit(:camper_model, :owner, :picture, :year, :description, :owner_id)
+    params.require(:camper).permit(:name_brand, :camper_model, :owner, :picture, :year, :description, :owner_id)
   end
 
   def cargallery_params
-    params.require(:cargallery).permit(:owner_id, :car_id, :picture_1, :description_1, :picture_2, :description_2, :picture_3, :description_3, :picture_4, :description_4, :picture_5, :description_5)
+    params.require(:cargallery).permit(:car_id, :car_image, :description)
   end
 
   def campgallery_params
-    params.require(:campgallery).permit(:owner_id, :camper_id, :picture_1, :description_1, :picture_2, :description_2, :picture_3, :description_3, :picture_4, :description_4, :picture_5, :description_5)
+    params.require(:campgallery).permit(:camper_id, :camp_image, :description)
   end
 
   def owner_params
@@ -74,7 +74,7 @@ module ApplicationHelper
   end
 
   def current_user
-    User.find_by_id(session[:user_name_id])
+    User.find_by_id(session[:email_id])
   end
 
   def verify
