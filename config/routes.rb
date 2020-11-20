@@ -3,21 +3,21 @@ Rails.application.routes.draw do
 
   resources :owners do
     resources :campers do
-       resources :campgalleries, except: [:destroy]
+       resources :campgalleries, except: [:index, :destroy]
     end
   end
+  
   resources :owners do  
     resources :cars do
-      resources :cargalleries, except: [:destroy]
+      resources :cargalleries, except: [:index, :destroy]
     end
   end
    
   get    "/login"  =>  "log_in#login"
   post   "/login"  =>  "log_in#post_login"
   delete "/logout" =>  "log_in#logout"
+  get "/auth/google_oauth2/callback", to: "log_in#google_login"
   
-  
-  resources :users
-
+  resources :users, except: [:index, :destroy]
 
 end
