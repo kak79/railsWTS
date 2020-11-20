@@ -14,7 +14,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to owner_car_path(@owner,@car)
     else
-      redirect_to new_owner_car_path
+      redirect_to new_owner_car_path(@owner)
     end
   end
 
@@ -30,8 +30,12 @@ class CarsController < ApplicationController
   end
 
   def update
-    @car.update(car_params)
-    redirect_to owner_car_path(@owner,@car)
+    if !@car
+      redirect_to new_owner_car_path(@owner)
+    else
+      @car.update(car_params)
+      redirect_to owner_car_path(@owner,@car)
+    end
   end
 
   def destroy
