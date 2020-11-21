@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def find_user
     @user = User.find_by_id(params[:id])
-    redirect_to users_path if !@user
+    redirect_to new_user_path if !@user
   end
 
   def find_car
