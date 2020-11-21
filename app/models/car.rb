@@ -3,7 +3,11 @@ class Car < ApplicationRecord
   has_many :owners
   has_many :users, through: :owners
   
-  has_one_attached :picture
+  has_one_attached :picture_1
+
+  has_one_attached :picture_2
+
+  validates :make, presence: true
 
   validates :car_model, presence: true
 
