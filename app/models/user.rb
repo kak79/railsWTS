@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
   has_many :owners
   has_many :cars, through: :owners
+  has_many :campers, through: :owners
   
   has_secure_password
 
