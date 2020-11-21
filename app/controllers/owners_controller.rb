@@ -30,13 +30,16 @@ class OwnersController < ApplicationController
   end
 
   def update
-    @owner.update(owner_params)
-    redirect_to owner_path(@owner)
+    if !@owner
+      redirect_to new_owner_path
+    else
+      @owner.update(owner_params)
+      redirect_to owner_path(@owner)
+    end
   end
 
   def destroy
     @owner.destroy
     redirect_to owners_path
   end
-
 end
