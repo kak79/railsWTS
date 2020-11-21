@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+# Cars that are Owned are Built, Edited, Displayed and Deleted in this Class
+
 class CarsController < ApplicationController
-
   include ApplicationHelper
-
   before_action :set_owner
-  before_action :find_car, only: [:show, :edit, :update, :destroy]
+  before_action :find_car, only: %I[show edit update destroy]
 
   def new
     @car = @owner.cars.new
@@ -12,7 +13,7 @@ class CarsController < ApplicationController
   def create
     @car = @owner.cars.new(car_params)
     if @car.save
-      redirect_to owner_car_path(@owner,@car)
+      redirect_to owner_car_path(@owner, @car)
     else
       redirect_to new_owner_car_path(@owner)
     end
@@ -24,9 +25,7 @@ class CarsController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      redirect_to login_path
-    end
+    return unless verify
   end
 
   def update
@@ -34,7 +33,7 @@ class CarsController < ApplicationController
       redirect_to new_owner_car_path(@owner)
     else
       @car.update(car_params)
-      redirect_to owner_car_path(@owner,@car)
+      redirect_to owner_car_path(@owner, @car)
     end
   end
 
@@ -42,5 +41,4 @@ class CarsController < ApplicationController
     @car.destroy
     redirect_to owner_cars_path(@owner)
   end
-
 end

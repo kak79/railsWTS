@@ -21,11 +21,11 @@
   <%= form.label :owner %>
   <%= form.collection_select :owner_id, Owner.all, :id, :owner_name %>
   <br>
-  <%= form.label :picture_1 %>
-  <%= form.file_field :picture_1 %>
+  <%= form.label :picture_one %>
+  <%= form.file_field :picture_one %>
   <br>
-  <%= form.label :picture_2 %>
-  <%= form.file_field :picture_2 %>
+  <%= form.label :picture_two %>
+  <%= form.file_field :picture_two %>
   <br>
   <%= form.label :year %>
   <%= form.number_field :year %>

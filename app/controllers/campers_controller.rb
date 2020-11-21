@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+#
+
+# Campers that are Owned are Built, Edited, Displayed and Deleted in this Class
+
 class CampersController < ApplicationController
-
   include ApplicationHelper
-
-  
   before_action :set_owner
-  before_action :find_camper, only: [:show, :edit, :update, :destroy]
+  before_action :find_camper, only: %I[show edit update destroy]
 
   def new
     @camper = @owner.campers.new
@@ -13,7 +16,7 @@ class CampersController < ApplicationController
   def create
     @camper = @owner.campers.new(camper_params)
     if @camper.save
-      redirect_to owner_camper_path(@owner,@camper)
+      redirect_to owner_camper_path(@owner, @camper)
     else
       redirect_to new_owner_camper_path(@owner)
     end
@@ -25,9 +28,7 @@ class CampersController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      redirect_to login_path
-    end
+    return unless verify
   end
 
   def update
@@ -35,7 +36,7 @@ class CampersController < ApplicationController
       redirect_to new_owner_camper_path(@owner)
     else
       @camper.update(camper_params)
-      redirect_to owner_camper_path(@owner,@camper)
+      redirect_to owner_camper_path(@owner, @camper)
     end
   end
 
@@ -43,5 +44,4 @@ class CampersController < ApplicationController
     @camper.destroy
     redirect_to owner_campers_path(@owner)
   end
-
 end

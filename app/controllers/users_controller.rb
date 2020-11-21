@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+# Users are built and Edited in this Class
+
 class UsersController < ApplicationController
-
   include ApplicationHelper
-
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_user, only: %I[show edit update]
 
   def new
     @user = User.new
@@ -18,9 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      redirect_to login_path
-    end
+    return unless verify
   end
 
   def update

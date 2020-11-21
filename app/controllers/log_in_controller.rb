@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+# Users are logged into and out of the Session in this Class
+
 class LogInController < ApplicationController
-
   include ApplicationHelper
-
   def login
     @user = User.new
   end
@@ -21,7 +22,7 @@ class LogInController < ApplicationController
     redirect_to login_path
   end
 
-  def google_login
+  def google_log
     useremail = request.env['omniauth.auth']['info']['email']
     username = request.env['omniauth.auth']['info']['name']
     @user = User.find_or_create_by(email: useremail) do |user|
@@ -31,5 +32,4 @@ class LogInController < ApplicationController
     session[:email_id] = @user.id
     redirect_to user_path(@user)
   end
-
 end

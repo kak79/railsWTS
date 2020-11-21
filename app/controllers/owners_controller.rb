@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+# Car and Camper Owners are Created, Deleted, Edited and Displayed in this Class
+
 class OwnersController < ApplicationController
-
   include ApplicationHelper
-
-  before_action :find_owner, only: [:show, :edit, :update, :destroy]
+  before_action :find_owner, only: %I[show edit update destroy]
 
   def new
     @owner = Owner.new
@@ -24,9 +25,7 @@ class OwnersController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      redirect_to login_path
-    end
+    return unless verify
   end
 
   def update

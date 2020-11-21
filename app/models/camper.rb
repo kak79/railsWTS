@@ -1,11 +1,12 @@
-class Camper < ApplicationRecord
+# frozen_string_literal: true
 
+class Camper < ApplicationRecord
   has_many :owners
   has_many :users, through: :owners
-  
-  has_one_attached :picture_1
 
-  has_one_attached :picture_2
+  has_one_attached :picture_one
+
+  has_one_attached :picture_two
 
   validates :make, presence: true
 
@@ -13,6 +14,5 @@ class Camper < ApplicationRecord
 
   validates :year, presence: true, numericality: { greater_than_or_equal_to: Date.today.year - 90, less_than_or_equal_to: Date.today.year + 1 }
 
-  validates :description, presence: true, length: { minimum: 25 , maximum: 1000 }
-
+  validates :description, presence: true, length: { minimum: 25, maximum: 1000 }
 end
