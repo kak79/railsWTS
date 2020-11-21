@@ -7,7 +7,7 @@ class LogInController < ApplicationController
   end
 
   def post_login
-    @user = User.find_by(user_name: params[:user][:email])
+    @user = User.find_by(email: params[:user][:email])
     if @user.try(:authenticate, params[:user][:password])
       session[:email_id] = @user.id
       redirect_to user_path(@user)
