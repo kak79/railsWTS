@@ -1,11 +1,19 @@
 <h1><%= title %></h1>
 
 <%= form_with model: camper, url: url, local: true  do |form| %>
-
-  <%= render "partials/campererrorform" %>
+    <% if camper.errors.any? %>
+      <div id="error_explanation">
+        <h2>There were some errors:</h2>
+        <ul>
+          <% camper.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <br>
-  <%= form.label :brand_name %>
-  <%= form.text_field :brand_name %>
+  <%= form.label :make %>
+  <%= form.text_field :make %>
   <br> 
   <%= form.label :camper_model %>
   <%= form.text_field :camper_model %>
@@ -13,8 +21,11 @@
   <%= form.label :owner %>
   <%= form.collection_select :owner_id, Owner.all, :id, :owner_name %>
   <br>
-  <%= form.label :picture %>
-  <%= form.file_field :picture %>
+  <%= form.label :picture_1 %>
+  <%= form.file_field :picture_1 %>
+  <br>
+  <%= form.label :picture_2 %>
+  <%= form.file_field :picture_2 %>
   <br>
   <%= form.label :year %>
   <%= form.number_field :year %>

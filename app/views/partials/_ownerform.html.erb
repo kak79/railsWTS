@@ -1,8 +1,16 @@
 <h1><%= title %></h1>
 
 <%= form_with model: owner, local: true  do |form| %>
-
-  <%= render "partials/ownererrorform" %>
+    <% if owner.errors.any? %>
+      <div id="error_explanation">
+        <h2>There were some errors:</h2>
+        <ul>
+          <% owner.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <br>
   <%= form.label :owner_name %>
   <%= form.text_field :owner_name %>
