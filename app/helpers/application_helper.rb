@@ -30,11 +30,11 @@ module ApplicationHelper
   end
 
   def car_params
-    params.require(:car).permit(:name_brand, :car_model, :owner, :picture, :year, :description, :owner_id)
+    params.require(:car).permit(:make, :car_model, :owner, :picture_1, :picture_2, :year, :description, :owner_id)
   end
 
   def camper_params
-    params.require(:camper).permit(:name_brand, :camper_model, :owner, :picture, :year, :description, :owner_id)
+    params.require(:camper).permit(:make, :camper_model, :owner, :picture_1, :picture_2, :year, :description, :owner_id)
   end
 
   def owner_params
