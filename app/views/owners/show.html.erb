@@ -1,13 +1,15 @@
 <h1 class="own-nm"><%="#{@owner.owner_name}"%>'s garage</h1>
 <% @owner.cars.collect do |car| %>
-<%= link_to image_tag(car.picture, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.picture.present? %>
-<%= link_to car.car_model, owner_car_path(car.owner_id, car) if !car.picture.present? %>
+<%= link_to image_tag(car.picture_1, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.picture_1.present? %>
+<%= link_to image_tag(car.picture_2, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.picture_2.present? && !car.picture_1.present? %>
+<%= link_to car.car_model, owner_car_path(car.owner_id, car) if !car.picture_1.present? && !car.picture_2.present? %>
 <% end %>
 <% @owner.campers.collect do |camper| %>
-<%= link_to image_tag(camper.picture, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture.present? %>
-<%= link_to camper.camper_model, owner_camper_path(camper.owner_id, camper) if !camper.picture.present? %>
+<%= link_to image_tag(camper.picture_1, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_1.present? %>
+<%= link_to image_tag(camper.picture_1, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_2.present? && !camper.picture_1.present? %>
+<%= link_to camper.camper_model, owner_camper_path(camper.owner_id, camper) if !camper.picture_1.present? && !camper.picture_2.present? %>
 <% end %>
-<br>
+<br><br>
 
 <%= button_to "Edit Owner?", edit_owner_path(@owner), method: :get %> 
 <br>
