@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'log_in#google_log'
 
   resources :users, except: %I[index destroy]
+  get     '/users/:id/edit_p'  =>  'users#edit_p'        , as: 'edit_password'
+  patch   '/users/:id'         =>  'users#update_p'  
 end
