@@ -3,7 +3,7 @@
 
 class UsersController < ApplicationController
   include ApplicationHelper
-  before_action :find_user, only: %I[show edit update]
+  before_action :find_user, only: %I[show edit edit_p update update_p]
 
   def new
     @user = User.new
@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to login_path
     else
-      redirect_to new_user_path
+      render :new
     end
   end
 
@@ -22,9 +22,26 @@ class UsersController < ApplicationController
     return unless verify
   end
 
+  def edit
+
+  end
+
   def update
     if !@user
-      redirect_to new_user_path
+      render :new
+    else
+      @user.update(user_params)
+      redirect_to user_path(@user)
+    end
+  end
+
+  def edit_p
+    
+  end
+
+  def update_p
+    if !@user
+      render :new
     else
       @user.update(user_params)
       redirect_to user_path(@user)

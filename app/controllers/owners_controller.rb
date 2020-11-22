@@ -14,7 +14,7 @@ class OwnersController < ApplicationController
     if @owner.save
       redirect_to owner_path(@owner)
     else
-      redirect_to new_owner_path
+      render :new
     end
   end
 
@@ -30,7 +30,7 @@ class OwnersController < ApplicationController
 
   def update
     if !@owner
-      redirect_to new_owner_path
+      render :new
     else
       @owner.update(owner_params)
       redirect_to owner_path(@owner)

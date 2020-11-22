@@ -1,7 +1,4 @@
 # frozen_string_literal: true
-
-#
-
 # Campers that are Owned are Built, Edited, Displayed and Deleted in this Class
 
 class CampersController < ApplicationController
@@ -18,7 +15,7 @@ class CampersController < ApplicationController
     if @camper.save
       redirect_to owner_camper_path(@owner, @camper)
     else
-      redirect_to new_owner_camper_path(@owner)
+      render :new
     end
   end
 
@@ -33,7 +30,7 @@ class CampersController < ApplicationController
 
   def update
     if !@camper
-      redirect_to new_owner_camper_path(@owner)
+      render :new
     else
       @camper.update(camper_params)
       redirect_to owner_camper_path(@owner, @camper)

@@ -15,7 +15,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to owner_car_path(@owner, @car)
     else
-      redirect_to new_owner_car_path(@owner)
+      render :new 
     end
   end
 
@@ -30,7 +30,7 @@ class CarsController < ApplicationController
 
   def update
     if !@car
-      redirect_to new_owner_car_path(@owner)
+      render :new
     else
       @car.update(car_params)
       redirect_to owner_car_path(@owner, @car)
