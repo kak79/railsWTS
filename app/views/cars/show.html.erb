@@ -3,8 +3,8 @@
 <p>Owner Name: <%= @owner.owner_name %></p>
 <p>Car Model Year: <%= @car.year %></p>
 <p class="desc">Description of Car: <%= @car.description %></p>
-<p class="car_pic"><%=  image_tag @car.picture_1 if @car.picture_1.present? %></p>
-<p class="car_pic"><%=  image_tag @car.picture_2 if @car.picture_2.present? %></p>
+<p class="car_pic"><%=  image_tag @car.picture_one if @car.picture_one.present? %></p>
+<p class="car_pic"><%=  image_tag @car.picture_two if @car.picture_two.present? %></p>
 <br><br>
 <%= button_to "Edit Car?", edit_owner_car_path(@owner,@car), method: :get %> 
 <br><br>
