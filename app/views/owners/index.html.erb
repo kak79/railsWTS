@@ -2,4 +2,13 @@
 <%= link_to owner.owner_name,owner_path(owner)%>
 <% end %></p>
 <br><br>
+
+
+
+<%= link_to @car.year.oldest_car, owner_car_path(@owner, @car) %>
+
+
+
+
+<br><br>
 <%= link_to "New Owner", new_owner_path, method: :get %>
