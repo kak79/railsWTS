@@ -16,17 +16,10 @@ class Car < ApplicationRecord
 
   validates :description, presence: true, length: { minimum: 25, maximum: 1000 }
 
-  scope :year, -> { where(:year => true) }
+  # scope :oldest_car, lambda { where('year desc').first }
 
-  def self.oldest_car
-    order('year_at desc').first
-  end
+  # my_proc = Proc.new {|name| puts "proc says hello " + name.to_s }
 
-  def self.newest_car
-    order('year_at asc').first
-  end
+  # scope :newest_car, lambda { where('year asc').first }
 
-  def self.car_models
-    all.map(&:car_model)
-  end
 end
