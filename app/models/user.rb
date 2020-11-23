@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   attr_accessor :current_password
-
+  
   has_many :owners
   has_many :cars, through: :owners
   has_many :campers, through: :owners
@@ -15,29 +15,26 @@ class User < ApplicationRecord
 
   validates :user_name, presence: true
 
-  validates_presence_of :password
-
   has_one_attached :avatar
 
+  validates :password, presence: {on: :create}, confirmation: {case_sensitive: true}, length: {minimum: 8}
+
+  validates :password, presence: {on: :update}, confirmation: {case_sensitive: true}, length: {minimum: 8}
+
+  validates :password_confirmation, presence: true
   
-  # validates_presence_of :current_password, if: :validate_password?, on: :update
-  # validate :current_password_is_correct, if: :validate_password?, on: :update  
+  validates_presence_of :current_password
+  validate :current_password_is_correct, on: :update
 
-  # def self.authenticate(user, password)  
-  #   user = find_by_code(user)
-  #   if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
-  #       user  
-  #   end  
-  # end  
-
-  # def current_password_is_correct
-  #   unless User.authenticate(code, current_password)
-  #     errors.add(:current_password, "Wrong password.")
-  #   end
-  # end
-
-  # def validate_password?
+  def current_password_is_correct
+    if !password.blank?
+      user = User.find_by_id(id)
+      if (user.authenticate(current_password) == false)
+        errors.add(:current_password, "is incorrect.")
+      end
+    end
+  end
   
-  # end
+  
 
 end

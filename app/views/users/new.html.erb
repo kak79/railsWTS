@@ -24,10 +24,13 @@
   <%= form.label :password %>
   <%= form.password_field :password %>
   <br>
+  <%= form.label :confirm_password %>
+  <%= form.password_field :password_confirmation %>  
+  <br>
   <br>
 
   <%= form.submit %>
-<br>
-<% end %>
+  <br>
+  <% end %>
   <br><br><br>
-<%= link_to "Sign up With Google", '/auth/google_oauth2' %>
+  <%= link_to "Sign up With Google", '/auth/google_oauth2' %>

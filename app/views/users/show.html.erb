@@ -2,6 +2,4 @@
 <p class="usrNm"><u>User Name:</u> <%= @user.user_name %></p>
 <p><%= image_tag @user.avatar, class: "usr-av" if @user.avatar.present? %></p>
 <br>
-<%= button_to "Edit User?", edit_user_path(@user), method: :get %> 
-<br>
 <%= link_to "Owners Home", owners_path, method: :get %>

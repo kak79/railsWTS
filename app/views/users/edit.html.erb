@@ -21,6 +21,15 @@
   <%= form.label :avatar %>
   <%= form.file_field :avatar %>
   <br>
+  <%= form.label :current_password %>
+  <%= form.password_field :current_password %>
+  <br>
+  <%= form.label :new_password %>
+  <%= form.password_field :password %>
+  <br>
+  <%= form.label :repeat_new_password %>
+  <%= form.password_field :password_confirmation %>
+  <br>
   <br>
 
   <%= form.submit %>
