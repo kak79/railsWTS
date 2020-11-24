@@ -13,6 +13,8 @@ class LogInController < ApplicationController
       session[:email_id] = @user.id
       redirect_to user_path(@user)
     else
+      @user = User.new
+      @error = "Invalid email or password"
       render :login
     end
   end
