@@ -3,7 +3,7 @@
 
 class UsersController < ApplicationController
   include ApplicationHelper
-  before_action :find_user, only: %I[show edit edit_p update update_p]
+  before_action :find_user, only: %I[show edit update]
 
   def new
     @user = User.new
