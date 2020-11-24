@@ -32,8 +32,11 @@ class CampersController < ApplicationController
     if !@camper
       render :new
     else
-      @camper.update(camper_params)
-      redirect_to owner_camper_path(@owner, @camper)
+      if @camper.update(camper_params)
+        redirect_to owner_camper_path(@owner, @camper)
+      else   
+        render :edit
+      end
     end
   end
 

@@ -32,8 +32,11 @@ class CarsController < ApplicationController
     if !@car
       render :new
     else
-      @car.update(car_params)
-      redirect_to owner_car_path(@owner, @car)
+      if @car.update(car_params)
+        redirect_to owner_car_path(@owner, @car)
+      else
+        render :edit
+      end
     end
   end
 
