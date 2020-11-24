@@ -1,13 +1,11 @@
 <h1>Login</h1>
 
 <%= form_with model: @user, local: true, url:login_path do |form| %>
-    <% if @user.errors.any? %>
+    <% if @error %>
       <div id="error_explanation">
         <h2>There were some errors:</h2>
         <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+            <li><%= @error %></li>
         </ul>
       </div>
     <% end %>
