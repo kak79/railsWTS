@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.1, Ruby on Rails version 6.0.3
 
 * System dependencies
 
@@ -22,6 +22,54 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# Project
 
+[project.com](https://project.com)
 
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
+## Install
+
+### Clone the repository
+
+```shell
+git clone git@github.com:juliendargelos/project.git
+cd project
+```
+
+### Check your Ruby version
+
+```shell
+ruby -v
+```
+
+The ouput should start with something like `ruby 2.5.1`
+
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+
+```shell
+rbenv install 2.5.1
+```
+
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+bundle && yarn
+```
+
+### Set environment variables
+
+See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+```
+
+## Serve
+
+```shell
+rails s
+```
+
