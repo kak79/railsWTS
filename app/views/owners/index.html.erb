@@ -2,10 +2,19 @@
 <%= link_to owner.owner_name,owner_path(owner)%>
 <% end %></p>
 <br><br>
-<p><%= "The #{Car.oldest_car.car_model} that Owner #{Car.oldest_car.owner_id} owns is the oldest car" %></p>
-<p><%= "The #{Car.newest_car.car_model} that Owner #{Car.newest_car.owner_id} owns is the newest car" %></p>
-<p><%= "The #{Camper.oldest_camper.camper_model} that Owner #{Camper.oldest_camper.owner_id} owns is the oldest camper" %></p>
-<p><%= "The #{Camper.newest_camper.camper_model} that Owner #{Camper.newest_camper.owner_id} owns is the newest camper" %></p>
+
+<p><%=link_to "The #{Car.oldest_car.year} #{Car.oldest_car.make} #{Car.oldest_car.car_model} is the oldest car.", owner_car_path(@owner=Car.oldest_car.owner_id,@car=Car.oldest_car.id) %>
+<%= "#{Owner.find(Car.oldest_car.owner_id).owner_name} is the owner."%></p>
+
+<p><%=link_to "The #{Car.newest_car.year} #{Car.newest_car.make} #{Car.newest_car.car_model} is the newest car" , owner_car_path(@owner=Car.newest_car.owner_id,@car=Car.newest_car.id) %>
+<%= "#{Owner.find(Car.newest_car.owner_id).owner_name} is the owner."%></p> 
+
+<p><%=link_to "The #{Camper.oldest_camper.year} #{Camper.oldest_camper.make} #{Camper.oldest_camper.camper_model} is the oldest camper" , owner_camper_path(@owner=Camper.oldest_camper.owner_id,@camper=Camper.oldest_camper.id) %>
+<%= "#{Owner.find(Camper.oldest_camper.owner_id).owner_name} is the owner."%></p>
+
+<p><%=link_to "The #{Camper.newest_camper.year} #{Camper.newest_camper.make} #{Camper.newest_camper.camper_model} is the newest camper" , owner_camper_path(@owner=Camper.newest_camper.owner_id,@camper=Camper.newest_camper.id) %>
+<%= "#{Owner.find(Camper.newest_camper.owner_id).owner_name} is the owner."%></p>
+
 
 <br><br>
 <%= link_to "New Owner", new_owner_path, method: :get %>
