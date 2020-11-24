@@ -2,13 +2,10 @@
 <%= link_to owner.owner_name,owner_path(owner)%>
 <% end %></p>
 <br><br>
-
-
-
-<%# link_to @car.oldest_car, owner_car_path(@owner, @car) %>
-
-
-
+<p><%= "The #{Car.oldest_car.car_model} that Owner #{Car.oldest_car.owner_id} owns is the oldest car" %></p>
+<p><%= "The #{Car.newest_car.car_model} that Owner #{Car.newest_car.owner_id} owns is the newest car" %></p>
+<p><%= "The #{Camper.oldest_camper.camper_model} that Owner #{Camper.oldest_camper.owner_id} owns is the oldest camper" %></p>
+<p><%= "The #{Camper.newest_camper.camper_model} that Owner #{Camper.newest_camper.owner_id} owns is the newest camper" %></p>
 
 <br><br>
 <%= link_to "New Owner", new_owner_path, method: :get %>
