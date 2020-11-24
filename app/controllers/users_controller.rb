@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   include ApplicationHelper
   before_action :find_user, only: %I[show edit update]
 
+  def index
+    redirect_to login_path
+  end
   def new
     @user = User.new
   end
