@@ -2,8 +2,8 @@
 
 class Owner < ApplicationRecord
   belongs_to :user
-  has_many :cars
-  has_many :campers
+  has_many :cars, dependent: :destroy
+  has_many :campers, dependent: :destroy
 
   validates :owner_name, presence: true
 end
