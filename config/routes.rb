@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   delete '/logout' =>  'log_in#logout'
   get '/auth/google_oauth2/callback', to: 'log_in#google_log'
 
-  resources :users, except: %I[index destroy]
+  resources :users, except: %I[destroy]
 end
