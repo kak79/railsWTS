@@ -27,12 +27,8 @@ module ApplicationHelper
     redirect_to owners_path if !@owner
   end
 
-  def new_user_params
+  def user_params
     params.require(:user).permit(:email, :user_name, :avatar, :password, :password_confirmation)
-  end
-
-  def update_user_params
-    params.require(:user).permit(:email, :user_name, :avatar,:current_password, :password, :password_confirmation)
   end
 
   def car_params
