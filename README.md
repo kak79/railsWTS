@@ -21,7 +21,7 @@ railsWTS is created with:
 
 * Ruby version: 2.6.1
 * Ruby on Rails version: 6.0.3
-* Bootstrap version: 999
+* Bootstrap version: 3.4.1
 * Omniauth Google Oauth 2 version: 0.8.0
 
 ## Setup
