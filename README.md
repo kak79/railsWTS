@@ -13,7 +13,7 @@
 
 ## General info
 
-This project is a website for an automotive upholstery shop.  It allows users (the shop workers) to log in via google or to create new users and log in on the site.  A user can create a vehicle owner, a car and a camper that belongs to that owner.  A user can edit it's profile and add an avatar.  A user can add up to 2 picture to a car and a camper.  A user can see the oldest and the newest car and camper and their owner on record on the owner's home page.
+This project is a website for an automotive upholstery shop.  It allows users (the shop workers) to log in via google or to create new users and log in on the site.  A user can create a vehicle owner, cars and campers that belong to that owner.  A user can edit it's profile and add an avatar.  A user can add up to 2 pictures to each car and camper.  A user can see the oldest and the newest car and camper and their owner on record on the owner's home page.
 
 ## Technologies
 
