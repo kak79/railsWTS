@@ -50,7 +50,7 @@ Go to Credentials, then select the "OAuth consent screen" tab on top, and provid
 Wait 10 minutes for changes to take effect.
 
 * Create a `.env` file in the main directory of the railsWTS project.
-* Put your client ID and Secred into your `.env` file as shown below
+* Put your client ID and Secret into your `.env` file as shown below
 
 ```
 GOOGLE_CLIENT_ID=
