@@ -6,7 +6,7 @@
 <% end %>
 <% @owner.campers.collect do |camper| %>
 <%= link_to image_tag(camper.picture_one, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_one.present? %>
-<%= link_to image_tag(camper.picture_one, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_two.present? && !camper.picture_one.present? %>
+<%= link_to image_tag(camper.picture_two, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_two.present? && !camper.picture_one.present? %>
 <%= link_to camper.camper_model, owner_camper_path(camper.owner_id, camper) if !camper.picture_one.present? && !camper.picture_two.present? %>
 <% end %>
 <br><br>
