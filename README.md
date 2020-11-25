@@ -32,7 +32,7 @@ To run this project, fork and clone it from:
 
 ![fork&clone](./app/assets/images/howto.png)
 
-Click on fork and then click on the green box that says Code on it and clone the the repository.  Then open a terminal of your choice in the directory where you want the app and enter the following commands.
+Click on fork and then click on the green box that says code on it and clone the the repository.  Open a terminal of your choice in the directory where you want the app and enter the following commands.
 
 ```
 mkdir folder_name
@@ -45,6 +45,7 @@ git clone YOU_PASTE_THE_CODE_YOU_COPIED_FROM_BENEATH_THE_GREEN_BUTTON
 Go to the [Google Developers Console](https://console.developers.google.com)
 
 Select or make your project.
+
 Go to Credentials, then select the "OAuth consent screen" tab on top, and provide an 'EMAIL ADDRESS' and a 'PRODUCT NAME'
 Wait 10 minutes for changes to take effect.
 
