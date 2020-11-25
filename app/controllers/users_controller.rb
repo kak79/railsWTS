@@ -33,8 +33,11 @@ class UsersController < ApplicationController
     if !@user
       render :new
     else
-      @user.update(user_params)
-      redirect_to user_path(@user)
+      if @user.update(user_params)
+        redirect_to user_path(@user)
+      else 
+        render :edit
+      end
     end
   end
 end
