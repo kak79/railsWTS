@@ -1,75 +1,91 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[railsWTS](https://github.com/kak79/railsWTS)
 
-Things you may want to cover:
+## Table of contents
 
-* Ruby version 2.6.1, Ruby on Rails version 6.0.3
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Bundle && Yarn](#bundle&yarn)
+* [Database Migration](#database)
+* [Start your Server](#server)
 
-* System dependencies
+## General info
 
-* Configuration
+This project is a website for an automotive upholstery shop.  It allows users (the shop workers) to log in via google or to create new users and log in on the site.  A user can create a vehicle owner, a car and a camper that belongs to that owner.  A user can edit it's profile and add an avatar.  A user can add up to 2 picture to a car and a camper.  A user can see the oldest and the newest car and camper and their owner on record on the owner's home page.
 
-* Database creation
+## Technologies
 
-* Database initialization
+railsWTS is created with:
 
-* How to run the test suite
+* Ruby version: 2.6.1
+* Ruby on Rails version: 6.0.3
+* Bootstrap version: 999
+* Omniauth Google Oauth 2 version: 0.8.0
 
-* Services (job queues, cache servers, search engines, etc.)
+## Setup
 
-* Deployment instructions
+To run this project, fork and clone it from:
 
-* ...
-# Project
+[railsWTS](https://github.com/kak79/railsWTS)
 
-[project.com](https://project.com)
+![fork&clone](./app/assets/images/howto.png)
 
-## Install
+Click on fork and then click on the green box that says Code on it and clone the the repository.  Then open a terminal of your choice in the directory where you want the app and enter the following commands.
 
-### Clone the repository
-
-```shell
-git clone git@github.com:juliendargelos/project.git
-cd project
+```
+mkdir folder_name
+cd folder_name
+git clone YOU_PASTE_THE_CODE_YOU_COPIED_FROM_BENEATH_THE_GREEN_BUTTON
 ```
 
-### Check your Ruby version
+### Google API Setup
 
-```shell
-ruby -v
+Go to the [Google Developers Console](https://console.developers.google.com)
+
+Select or make your project.
+Go to Credentials, then select the "OAuth consent screen" tab on top, and provide an 'EMAIL ADDRESS' and a 'PRODUCT NAME'
+Wait 10 minutes for changes to take effect.
+
+* Create a `.env` file in the main directory of the railsWTS project.
+* Put your client ID and Secred into your `.env` file as shown below
+
+```
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 ```
 
-The ouput should start with something like `ruby 2.5.1`
+## Bundle && Yarn
 
-If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+The next steps are to install your Gemfile and make sure that yarn is up to date.  In the terminal of your choice...
 
-```shell
-rbenv install 2.5.1
+```
+bundle
 ```
 
-### Install dependencies
+If yarn complains, follow the directions to update it, if not, then you should be OK.
 
-Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+## Database Migration
 
-```shell
-bundle && yarn
+Next you will need to migrate your database.  In the terminal please type the following.
+
+```
+rails db:migrate
 ```
 
-### Set environment variables
+## Start your Server
 
-See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+In order to start your rails server and display the railsWTS app in the browser please type the following in your terminal.
 
-### Initialize the database
-
-```shell
-rails db:create db:migrate db:seed
 ```
-
-## Serve
-
-```shell
 rails s
 ```
 
+Now open a browser tab and enter this url
+
+```
+http://localhost:3000/login
+```
+
+Thank You!
