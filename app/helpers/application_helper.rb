@@ -32,7 +32,7 @@ module ApplicationHelper
   end
 
   def car_params
-    params.require(:car).permit(:make, :car_model, :owner, :picture_one, :picture_two, :year, :description, :owner_id)
+    params.require(:car).permit(:make, :car_model, :owner, :year, :description, :owner_id, pictures: [])
   end
 
   def camper_params

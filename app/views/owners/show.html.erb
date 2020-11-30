@@ -1,8 +1,8 @@
 <h1 class="own-nm"><%="#{@owner.owner_name}"%>'s garage</h1>
 <% @owner.cars.collect do |car| %>
-<%= link_to image_tag(car.picture_one, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.picture_one.present? %>
-<%= link_to image_tag(car.picture_two, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.picture_two.present? && !car.picture_one.present? %>
-<%= link_to car.car_model, owner_car_path(car.owner_id, car) if !car.picture_one.present? && !car.picture_two.present? %>
+<%= link_to url_for(car.pictures, class: "car-thumb"), owner_car_path(car.owner_id, car) if car.pictures.attached? %>
+
+<%= link_to car.car_model, owner_car_path(car.owner_id, car) if !car.pictures.present? %>
 <% end %>
 <% @owner.campers.collect do |camper| %>
 <%= link_to image_tag(camper.picture_one, class: "camper-thumb"), owner_camper_path(camper.owner_id, camper) if camper.picture_one.present? %>
