@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :owners, only: [] do
-    resources :cars
+    resources :cars  
   end
-
+  get '/cars/indextwo', to: 'cars#indextwo', as: 'indextwo' 
+ 
   get    '/login'  =>  'log_in#login'
   post   '/login'  =>  'log_in#post_login'
   delete '/logout' =>  'log_in#logout'
