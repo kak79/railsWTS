@@ -20,4 +20,6 @@ class Car < ApplicationRecord
 
   scope :newest_car, lambda { order(year: :desc).first }
 
+  scope :create_list, lambda { order(created_at: :asc) }
+
 end

@@ -1,0 +1,8 @@
+<p><%= "The #{Car.create_list.first.year} #{Car.create_list.first.make} #{Car.create_list.first.car_model} is the first car created in the car list." if Car.create_list.first.present? %><br>
+
+<p><% Car.create_list.slice(1..-2).each do |car| %>
+<%= "The #{car.year} #{car.make} #{car.car_model} is the next car created in the car list." if car.present? %>
+<br><br>
+<% end %></p>
+
+<p><%= "The #{Car.create_list.last.year} #{Car.create_list.last.make} #{Car.create_list.last.car_model} is the last car created in the car list." if Car.create_list.last.present? %>

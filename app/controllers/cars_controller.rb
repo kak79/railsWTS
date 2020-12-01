@@ -3,7 +3,7 @@
 
 class CarsController < ApplicationController
   include ApplicationHelper
-  before_action :set_owner
+  before_action :set_owner, except: %I[indextwo]
   before_action :find_car, only: %I[show edit update destroy]
 
   def new
@@ -22,6 +22,10 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
     redirect_to owner_path(@owner)
+  end
+
+  def indextwo
+    @cars = Car.all
   end
 
   def show

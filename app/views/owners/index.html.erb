@@ -4,21 +4,23 @@
 <br><br>
 
 <p><%=link_to "The #{Car.oldest_car.year} #{Car.oldest_car.make} #{Car.oldest_car.car_model} is the oldest car.",
- owner_car_path(@owner=Car.oldest_car.owner_id,@car=Car.oldest_car.id) %>
-<%= "#{Owner.find(Car.oldest_car.owner_id).owner_name} is the owner."%></p>
+ owner_car_path(@owner=Car.oldest_car.owner_id,@car=Car.oldest_car.id) if Car.oldest_car.present? %>
+<%= "#{Owner.find(Car.oldest_car.owner_id).owner_name} is the owner." if Car.oldest_car.present? %> </p>
 
 <p><%=link_to "The #{Car.newest_car.year} #{Car.newest_car.make} #{Car.newest_car.car_model} is the newest car",
- owner_car_path(@owner=Car.newest_car.owner_id,@car=Car.newest_car.id) %>
-<%= "#{Owner.find(Car.newest_car.owner_id).owner_name} is the owner."%></p> 
+ owner_car_path(@owner=Car.newest_car.owner_id,@car=Car.newest_car.id) if Car.newest_car.present? %>
+<%= "#{Owner.find(Car.newest_car.owner_id).owner_name} is the owner." if Car.newest_car.present? %></p> 
 
 <p><%=link_to "The #{Camper.oldest_camper.year} #{Camper.oldest_camper.make} #{Camper.oldest_camper.camper_model} is the oldest camper",
- owner_camper_path(@owner=Camper.oldest_camper.owner_id,@camper=Camper.oldest_camper.id) %>
-<%= "#{Owner.find(Camper.oldest_camper.owner_id).owner_name} is the owner."%></p>
+ owner_camper_path(@owner=Camper.oldest_camper.owner_id,@camper=Camper.oldest_camper.id) if Camper.oldest_camper.present? %>
+<%= "#{Owner.find(Camper.oldest_camper.owner_id).owner_name} is the owner." if Camper.oldest_camper.present? %></p>
 
 <p><%=link_to "The #{Camper.newest_camper.year} #{Camper.newest_camper.make} #{Camper.newest_camper.camper_model} is the newest camper",
- owner_camper_path(@owner=Camper.newest_camper.owner_id,@camper=Camper.newest_camper.id) %>
-<%= "#{Owner.find(Camper.newest_camper.owner_id).owner_name} is the owner."%></p>
-
-
+ owner_camper_path(@owner=Camper.newest_camper.owner_id,@camper=Camper.newest_camper.id) if Camper.newest_camper.present? %>
+<%= "#{Owner.find(Camper.newest_camper.owner_id).owner_name} is the owner." if Camper.newest_camper.present? %></p>
 <br><br>
+
+<%= link_to "car list by create date", indextwo_path, method: :get %>
+<br><br>
+
 <%= link_to "New Owner", new_owner_path, method: :get %>

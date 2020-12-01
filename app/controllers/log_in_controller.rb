@@ -29,7 +29,8 @@ class LogInController < ApplicationController
     username = request.env['omniauth.auth']['info']['name']
     @user = User.find_or_create_by(email: useremail) do |user|
       user.user_name = username
-      user.password = SecureRandom.hex
+      user.password = SecureRandom.hex(5)
+      user.password_confirmation=user.password
     end
     session[:email_id] = @user.id
     redirect_to user_path(@user)
